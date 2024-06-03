@@ -2,9 +2,12 @@
 package com.example.SpringBootTutorial_JPA_PostgreSQL.student;
 
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.List;
 
 @NoRepositoryBean
-public interface paRepository<T, ID> extends JpaRepository<T, ID> {
+public interface JpaRepository<T, ID> extends PagingAndSortingRepository<T, ID> {
     List<T> findALL();
 
     List<T> findAll(Sort var1);
@@ -14,4 +17,13 @@ public interface paRepository<T, ID> extends JpaRepository<T, ID> {
     <S extends T> List<S> saveAll(Iterable<S> var1);
 
     void flush();
-}*/
+    <S extends T> List<S> saveAll(Iterable(S) var1);
+    void flush();
+    <S extends T> S saveAndFlush(S var1);
+    void deleteInBatch(Iterable<T> var1);
+    voiddeleteAllInBatch();
+    T getOne(ID var1);
+
+
+}
+*/
